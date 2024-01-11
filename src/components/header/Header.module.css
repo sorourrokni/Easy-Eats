@@ -1,0 +1,23 @@
+.topBar {
+    background: #F5F6F8;
+    padding: 1vh 8vw;
+}
+
+.topBar address {
+    color: #666;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.promotional {
+    padding: 12px 8vw;
+    background: black;
+}
+
+.promotional p {
+    padding: 0 8vw;
+    color: #FFF;
+    letter-spacing: 2px;
+}

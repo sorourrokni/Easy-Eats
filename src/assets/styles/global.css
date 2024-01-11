@@ -1,0 +1,19 @@
+:root {
+    --horizotal-padding: 8vw;
+    --vertical-padding: 1vh;
+    --hover-color: #EEEEEE;
+    --border-color: #EEEEEE;
+    --default-border: 2px solid var(--border-color);
+}
+
+a:where(.css-dev-only-do-not-override-gzal6t).ant-typography, :where(.css-dev-only-do-not-override-gzal6t).ant-typography a {
+    color: black;
+}
+
+a:where(.css-dev-only-do-not-override-gzal6t).ant-typography:focus, :where(.css-dev-only-do-not-override-gzal6t).ant-typography a:focus, a:where(.css-dev-only-do-not-override-gzal6t).ant-typography:hover, :where(.css-dev-only-do-not-override-gzal6t).ant-typography a:hover {    color: black;
+    text-decoration: underline;
+}
+
+:where(.css-dev-only-do-not-override-gzal6t).ant-btn {
+    border-radius: 0;
+}

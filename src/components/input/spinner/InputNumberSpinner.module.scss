@@ -1,0 +1,17 @@
+$border: 2px solid var(--border-color);
+$bg_color: white;
+
+.container p {
+  padding: 8px 24px;
+  margin: 0;
+  border-top: $border;
+  border-bottom: $border;
+  background-color: $bg_color;
+}
+
+.actionButton {
+  height: 100%;
+  padding: 0 8px;
+  border: $border;
+  background-color: $bg_color;
+}
