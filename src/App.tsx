@@ -1,9 +1,20 @@
-import Message from "./message";
+import PrimaryButton from "./components/form/PrimaryButton";
+import SignUpPage from "./pages/SignUp";
+import { Route, Routes } from "react-router-dom";
+import AppRoutes from "./AppRoutes";
+import { Layout } from "antd";
 
-function App(){
-return <div>
-  <Message/>
-</div>
+function App() {
+  return (
+    <Layout>
+      <Routes>
+        {AppRoutes.map((route, index) => {
+          const { element, ...rest } = route;
+          return <Route key={index} {...rest} element={element} />;
+        })}
+      </Routes>
+    </Layout>
+  );
 }
 
 export default App;

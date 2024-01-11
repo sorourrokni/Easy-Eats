@@ -1,0 +1,12 @@
+.text{
+   color: linear-gradient(0deg, #626264, #626264);
+}
+
+.linkButton{
+    color: #FB6D3A;
+    padding: 0.2rem;
+}
+
+.flex{
+    justify-content: center;
+}
