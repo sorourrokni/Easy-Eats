@@ -1,6 +1,5 @@
 import React from "react";
 import { Flex, Form } from "antd";
-import Separator from "./Separator";
 import FormHeader from "./FormHeader";
 import styles from "./AuthForm.module.css";
 import SideCover from "./SideCover";
@@ -21,7 +20,7 @@ function AuthForm({
   cover,
 }: AuthFormProps) {
   return (
-    <Flex justify="center" align="center">
+    <Flex justify="center" align="center" className={styles.flex}>
       <SideCover src={cover} alt="SideImage"></SideCover>
       <Form
         onFinish={onFinish}

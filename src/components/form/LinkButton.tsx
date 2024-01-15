@@ -15,12 +15,14 @@ const LinkButton: React.FC<LinkButtonProps> = ({
 }) => {
   return (
     <Flex className={styles.flex}>
-      <Typography.Text className={styles.text}>
-        {title}
-        <Button className={styles.linkButton} type="link" onClick={onClick}>
-          {textButton}
-        </Button>
-      </Typography.Text>
+      <span className={`${styles.title}body2-regular`}>{title}</span>
+      <Button
+        className={`${styles.linkButton} h4-bold`}
+        type="link"
+        onClick={onClick}
+      >
+        {textButton}
+      </Button>
     </Flex>
   );
 };

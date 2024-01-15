@@ -1,23 +1,25 @@
 .form {
-    width: 576px;
-    margin: 5% auto;
-    padding: 1.7% 2.7%;
-    background-color: #fff;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  width: 576px;
+  margin: 5% auto;
+  padding: 1.7% 2.7%;
+  background-color: #ffffff;
 }
 
 .section {
-    margin-top: 3rem;
+  margin-top: 3rem;
 }
 
 .form a {
-    text-decoration-line: underline;
-    padding-top: 4px;
-    font-size: 16px;
-    color: #000;
-    
+  text-decoration-line: underline;
+  padding-top: 4px;
+  font-size: 16px;
+  color: #000;
 }
 
 .form a:hover {
-    color: #4096ff;
+  color: #4096ff;
+}
+
+.flex {
+  background-color: #ffffff;
 }

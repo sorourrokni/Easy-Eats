@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./FormHeader.module.css";
 
 interface FormHeaderProps {
@@ -8,9 +7,9 @@ interface FormHeaderProps {
 
 function FormHeader({ title, description }: FormHeaderProps) {
   return (
-    <header className={styles.header}>
-      <h2 className={"h3-medium-semi"}>{title}</h2>
-      <h6>{description}</h6>
+    <header>
+      <h1 className={`${styles.header} h1-bold`}>{title}</h1>
+      <p className={`${styles.description} body1-regular`}>{description}</p>
     </header>
   );
 }

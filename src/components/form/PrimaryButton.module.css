@@ -1,8 +1,11 @@
 .submitButton {
-    width: 100%;
-    min-height: 48px;
-    background-color: #503E9D;
-    color: #F7FAFC;
-    border-radius: 12px;
-    margin-top: 1rem;
+  display: "flex";
+  justify-content: "center";
+  align-items: "center";
+  width: 100%;
+  min-height: 64px;
+  background-color: #503e9d;
+  color: #f7fafc;
+  border-radius: 12px;
+  margin-top: 24px;
 }

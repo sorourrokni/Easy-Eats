@@ -1,11 +1,10 @@
 .item {
     margin-bottom: 1rem;
-    width: 100%;
+    width: 400px;
 }
 
-.item label {
-    font-size: 1rem;
-    font-weight: 500;
+.customLabel{
+    color: #182135;
 }
 
 .input {
@@ -15,5 +14,8 @@
     border-right: none;
     border-radius: 0;
     min-height: 48px;
-    width: 100%;
+}
+
+.input::placeholder{
+    color:#626264;
 }

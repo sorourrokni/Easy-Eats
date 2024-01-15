@@ -1,99 +1,108 @@
-.h1-medium-semi {
-  margin: 0;
-  font-size: 64px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 80px;
-  letter-spacing: -1.28px;
-}
-
-.h2-medium-semi {
-  margin: 0;
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 62px;
-  letter-spacing: -0.96px;
-}
-
-.h3-medium-semi {
-  margin: 0;
+.h1-bold {
+  //styleName: Text/H1/Bold;
+  font-family: "Open Sans";
   font-size: 32px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  letter-spacing: -0.96px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0px;
+  text-align: left;
 }
 
-.h4-medium-semi {
-  margin: 0;
+.h2-bold {
+  //styleName: Text/H2/Bold;
+  font-family: "Open Sans";
   font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0px;
+  text-align: left;
 }
 
-.h5-medium-semi {
-  margin: 0;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
+.h3-bold {
+  //styleName: Text/H3/Bold;
+  font-family: "Open Sans";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0px;
 }
 
-.p-large-semi {
-  margin: 0;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 27px;
-}
-
-.p-medium-semi {
-  margin: 0;
+.h4-bold {
+  //styleName: Text/H4/Bold;
+  font-family: "Open Sans";
   font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
 }
 
-.p-medium-normal {
-  margin: 0;
+.h5-bold {
+  //styleName: Text/H5/Bold;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.h6-bold {
+  //styleName: Text/H6/Bold;
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.body1-regular {
+  //styleName: Text/Body/Large/Regular;
+  font-family: "Open Sans";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.body2-regular {
+  //styleName: Text/Body/Normal/Regular;
+  font-family: "Open Sans";
   font-size: 16px;
-  font-style: normal;
   font-weight: 400;
   line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
 }
 
-.p-small-semi {
-  margin: 0;
+.body3-regular {
+  //styleName: Text/Body/Small/Regular;
+  font-family: "Open Sans";
   font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 22px;
-}
-
-.p-small-medium {
-  margin: 0;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 22px;
-}
-
-.p-small-normal {
-  margin: 0;
-  font-size: 14px;
-  font-style: normal;
   font-weight: 400;
-  line-height: 22px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
 }
 
-.button-medium-semi {
-  margin: 0;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 22px;
-  letter-spacing: 2px;
+.caption1-regular {
+  //styleName: Text/Caption-1/Regular/18pt-line-height;
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.caption2-regular {
+  //styleName: Text/Caption-2/Regular;
+  font-family: "Open Sans";
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-align: left;
 }

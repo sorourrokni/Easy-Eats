@@ -1,15 +1,10 @@
-.header h2 {
+.header {
     margin-top: 24px;
-    text-align: start;
-    font-size: 2rem;
-    color:rgba(24, 33, 53, 1);
-    
+    color: #182135;
+
 }
 
-.header h6{
-    margin-top: 24px;
-    text-align: start;
-    font-size: 1rem;
-    color: rgba(98, 98, 100, 1);
-
+.description{
+    margin-top: 12px;
+    color: #626264;
 }

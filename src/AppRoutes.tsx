@@ -1,5 +1,6 @@
 import SignUpPage from "./pages/SignUp";
 import SignInPage from "./pages/SignIn";
+import Authentication from "./pages/Authentication";
 
 const AppRoutes = [
   {
@@ -13,6 +14,10 @@ const AppRoutes = [
   {
     path: "/login",
     element: <SignInPage />,
+  },
+  {
+    path: "/authentication",
+    element: <Authentication />,
   },
 ];
 

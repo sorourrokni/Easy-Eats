@@ -7,6 +7,8 @@ import WebBreadcrumb from "../components/header/breadcrump/WebBreadCrumb";
 import SideImage from "../assets/images/SideImage.png";
 import passwordIcon from "../assets/icons/password.svg";
 import emailIcon from "../assets/icons/email.svg";
+import ForgotPasswordLink from "../components/signin/ForgotPasswordLink";
+import SecondaryButton from "../components/form/SecondaryButton";
 
 interface SignInData {
   email: string;
@@ -15,12 +17,7 @@ interface SignInData {
 }
 
 function SignInPage() {
-  const breadcrumbItems = [
-    { name: "Home", path: "/" },
-    { name: "Login", path: "/login" },
-  ];
-
-  //   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const onFinish = async (values: SignInData) => {
     // try {
@@ -42,10 +39,16 @@ function SignInPage() {
     // }
   };
 
+  const handleForgotPasswordClick = () => {
+    navigate("/authentication");
+  };
+
+  const handleButtonClick = () => {
+    navigate("/register");
+  };
+
   return (
     <>
-      {/* <WebBreadcrumb items={breadcrumbItems}/> */}
-
       <AuthForm
         title="Welcome!"
         description="Sign in to your account to continue "
@@ -69,8 +72,12 @@ function SignInPage() {
             placeholder="******"
             required
           />
-          <PrimaryButton text="Sign in" />
-          <PrimaryButton text="Create an account" />
+          <SecondaryButton text="Sign in" />
+          <ForgotPasswordLink
+            textButton="Forgot password?"
+            onClick={handleForgotPasswordClick}
+          />
+          <PrimaryButton text="Create an account" onClick={handleButtonClick} />
         </>
       </AuthForm>
     </>

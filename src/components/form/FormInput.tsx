@@ -24,7 +24,7 @@ function FormInput({
       <BaseIcon srcSet={icon} alt="icon"></BaseIcon>
       <Form.Item
         className={styles.item}
-        label={label}
+        label={<span className={`${styles.customLabel} h6-bold`}>{label}</span>}
         name={name}
         rules={[
           {
@@ -33,7 +33,11 @@ function FormInput({
           },
         ]}
       >
-        <Input className={styles.input} type={type} placeholder={placeholder} />
+        <Input
+          className={`${styles.input} body1-regular`}
+          type={type}
+          placeholder={placeholder}
+        />
       </Form.Item>
     </Space>
   );

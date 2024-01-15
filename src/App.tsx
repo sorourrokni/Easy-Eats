@@ -1,8 +1,7 @@
-import PrimaryButton from "./components/form/PrimaryButton";
-import SignUpPage from "./pages/SignUp";
 import { Route, Routes } from "react-router-dom";
 import AppRoutes from "./AppRoutes";
 import { Layout } from "antd";
+import "./assets/styles/typography.scss";
 
 function App() {
   return (
