@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Button, Flex } from "antd";
+import { Button, Flex } from "antd";
 import styles from "./LinkButton.module.css";
 
 interface LinkButtonProps {

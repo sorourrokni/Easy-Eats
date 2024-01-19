@@ -1,0 +1,16 @@
+.customMenu {
+  height: 304px;
+  padding: 16px;
+  background: #f7f7f7;
+  border: 0;
+  border-radius: 0px 24px 24px 0px;
+}
+
+.customItem {
+  color: #333;
+}
+
+.selectedItem {
+  background-color: #503e9d;
+  color: #fff;
+}

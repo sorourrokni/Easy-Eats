@@ -1,24 +1,18 @@
 :root {
-  --horizotal-padding: 8vw;
-  --vertical-padding: 1vh;
-  --hover-color: #eeeeee;
-  --border-color: #eeeeee;
-  --default-border: 2px solid var(--border-color);
-}
+  --primary-color-100: #503e9d;
+  --primary-color-10: #503e9d1a;
 
-a:where(.css-dev-only-do-not-override-gzal6t).ant-typography,
-:where(.css-dev-only-do-not-override-gzal6t).ant-typography a {
-  color: black;
-}
+  --secondary-color-100: #fb6d3a;
+  --secondary-color-10: #fb6d3a1a;
 
-a:where(.css-dev-only-do-not-override-gzal6t).ant-typography:focus,
-:where(.css-dev-only-do-not-override-gzal6t).ant-typography a:focus,
-a:where(.css-dev-only-do-not-override-gzal6t).ant-typography:hover,
-:where(.css-dev-only-do-not-override-gzal6t).ant-typography a:hover {
-  color: black;
-  text-decoration: underline;
-}
+  --tertiary-color-100: #facd5d;
+  --tertiary-color-10: #facd5d1a;
 
-:where(.css-dev-only-do-not-override-gzal6t).ant-btn {
-  border-radius: 0;
+  --success-color-100: #419d3e;
+  --success-color-10: #419d3e1a;
+
+  --error-color-100: #ff0000;
+  --error-color-10: #ff00001a;
+
+  --text-dark: #626264;
 }

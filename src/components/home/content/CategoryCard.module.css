@@ -1,0 +1,22 @@
+.title {
+  padding-top: 16px;
+  padding-bottom: 4px;
+  margin: 4px;
+  color: #182135;
+  text-align: center;
+}
+
+.description {
+  color: #626264;
+  text-align: center;
+  margin: 4px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f7f7;
+  border-radius: 14px;
+}

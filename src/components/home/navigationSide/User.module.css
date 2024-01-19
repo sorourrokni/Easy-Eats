@@ -1,0 +1,21 @@
+.flex {
+  flex-direction: row;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 32px;
+}
+
+.name {
+  color: #182135;
+}
+
+.email {
+  color: #626264;
+}
+
+.header {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-left: 20px;
+  margin-right: 16px;
+}

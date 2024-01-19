@@ -1,0 +1,13 @@
+.flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  padding-right: 16px;
+}
+
+.content {
+  color: #626264;
+  text-align: center;
+  margin: 4px;
+}

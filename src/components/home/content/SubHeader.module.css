@@ -1,0 +1,14 @@
+.flex {
+  flex-direction: row;
+  align-items: center;
+  padding-right: 24px;
+}
+
+.title {
+  color: #182135;
+  padding-left: 12px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  padding-right: 8px;
+  margin: 0;
+}
