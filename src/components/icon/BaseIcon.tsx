@@ -3,6 +3,7 @@ import styles from "./BaseIcon.module.css";
 interface BaseIconProps {
   srcSet: string;
   alt: string;
+  color?: string;
   className?: string;
   onClick?: () => void;
   isSelected?: boolean;
@@ -28,7 +29,13 @@ function BaseIcon({
       } ${isSelected ? styles.selected : ""} ${className}`}
       onClick={handleClick}
     >
-      <img className={styles.icon} loading="lazy" srcSet={srcSet} alt={alt} />
+      <img
+        className={`${styles.icon} ${isSelected ? styles.selected : ""}`}
+        // style={{ color: color }}
+        loading="lazy"
+        srcSet={srcSet}
+        alt={alt}
+      />
     </button>
   );
 }

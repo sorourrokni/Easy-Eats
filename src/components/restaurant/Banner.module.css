@@ -1,0 +1,31 @@
+.bannerContainer {
+  position: relative;
+  width: 100%;
+}
+
+.banner {
+  width: 100%;
+  height: 296px;
+  position: relative;
+  overflow: hidden;
+}
+
+.centeredImage {
+  position: absolute;
+  border: 4px solid white;
+  border-radius: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -16%;
+}
+
+.likeIcon {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  margin: 8px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  width: 48px;
+  height: 48px;
+}

@@ -1,0 +1,13 @@
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 32px;
+  padding-left: 32px;
+  margin: 0;
+}
+
+.title {
+  color: #182135;
+}

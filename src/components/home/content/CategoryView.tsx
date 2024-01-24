@@ -12,13 +12,11 @@ interface ListProps {
   categories: Category[];
   cols: number;
   gutter: number;
-  title: string;
 }
 
-function CategoryView({ categories, cols, gutter, title }: ListProps) {
+function CategoryView({ categories, cols, gutter }: ListProps) {
   return (
     <>
-      <h1 className={`${styles.header} h2-bold`}>{title}</h1>
       <List
         dataSource={categories}
         className={styles.list}

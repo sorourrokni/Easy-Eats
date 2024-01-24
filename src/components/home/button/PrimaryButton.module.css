@@ -1,0 +1,13 @@
+.button {
+  background-color: var(--default-button-background);
+  color: var(--text-dark);
+  padding-block: 0;
+  margin-right: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.button.selected {
+  background-color: var(--primary-color-100);
+  color: #ffffff;
+}

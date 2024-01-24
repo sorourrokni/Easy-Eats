@@ -1,12 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
-import CategoryView from "../components/home/content/CategoryView";
-import nearestIcon from "../assets/icons/NearestIcon.svg";
-import pickUpIcon from "../assets/icons/PickUpIcon.svg";
-import dineInIcon from "../assets/icons/dineIn.svg";
-import highClassIcon from "../assets/icons/highClass.svg";
-import fastDeliveryIcon from "../assets/icons/fastDelivery.svg";
-import popularIcon from "../assets/icons/popular.svg";
 import foodImg1 from "../assets/images/food-1.svg";
 import foodImg2 from "../assets/images/food-2.svg";
 import foodImg3 from "../assets/images/food-3.svg";
@@ -27,45 +19,6 @@ import restaurantImg6 from "../assets/images/Pizza Hut.png";
 import moneyIcon from "../assets/icons/Money.svg";
 import locationIcon from "../assets/icons/Location.svg";
 import TitleHeader from "../components/home/content/TitleHeader";
-import HomeContent from "../components/home/content/HomeContent";
-
-interface Category {
-  title: string;
-  options: string;
-  icon: string;
-}
-const categories: Category[] = [
-  {
-    title: "Popular",
-    options: "286+ options",
-    icon: popularIcon,
-  },
-  {
-    title: "Fast delivery",
-    options: "1,843+ options",
-    icon: fastDeliveryIcon,
-  },
-  {
-    title: "High class",
-    options: "25+ options",
-    icon: highClassIcon,
-  },
-  {
-    title: "Dine in",
-    options: "182+ options",
-    icon: dineInIcon,
-  },
-  {
-    title: "Pick up",
-    options: "3,548+ options",
-    icon: pickUpIcon,
-  },
-  {
-    title: "Nearest",
-    options: "44+ options",
-    icon: nearestIcon,
-  },
-];
 
 interface Foods {
   name: string;
@@ -273,12 +226,16 @@ const restaurants: Restaurants[] = [
   },
 ];
 
-interface HomePageProps {
-  onRestaurantCardClick: () => void;
-}
+function ExplorePage() {
+  const navigate = useNavigate();
 
-function HomePage() {
-  const handleRestaurantCardClick = () => {};
+  const handleRestaurantCardClick = () => {
+    navigate("/restaurant");
+  };
+  const handleFoodCardClick = () => {
+    navigate("/food");
+  };
+
   const onFinish = async () => {
     // try {
     //   const response = await fetch("/login", {
@@ -298,28 +255,20 @@ function HomePage() {
     //   console.error("Error during login:", error.message);
     // }
   };
-
   return (
-    <>
-      <div style={{ backgroundColor: "#ffffff" }}>
-        <TitleHeader title={"Explore categories"}></TitleHeader>
-        <CategoryView
-          categories={categories}
-          cols={6}
-          gutter={32}
-        ></CategoryView>
-        <TitleHeader title={"Featured restaurants"}></TitleHeader>
-        <RestaurantView
-          restaurants={restaurants}
-          cols={3}
-          gutter={24}
-          onClick={handleRestaurantCardClick}
-        ></RestaurantView>
-        <TitleHeader title={"Asian food"}></TitleHeader>
-        <FoodsView foods={foods} cols={3} gutter={32}></FoodsView>
-      </div>
-    </>
+    <div style={{ backgroundColor: "#ffffff" }}>
+      <TitleHeader title={"Restaurants nearby"}></TitleHeader>
+      <RestaurantView
+        restaurants={restaurants}
+        cols={3}
+        gutter={24}
+        onClick={handleRestaurantCardClick}
+      ></RestaurantView>
+      <TitleHeader title={"Popular orders"}></TitleHeader>
+
+      <FoodsView foods={foods} cols={3} gutter={32}></FoodsView>
+    </div>
   );
 }
 
-export default HomePage;
+export default ExplorePage;

@@ -1,9 +1,7 @@
-import React from "react";
 import FormInput from "../components/form/FormInput";
 import PrimaryButton from "../components/form/PrimaryButton";
 import AuthForm from "../components/form/AuthForm";
 import { useNavigate } from "react-router-dom";
-import WebBreadcrumb from "../components/header/breadcrump/WebBreadCrumb";
 import SideImage from "../assets/images/SideImage.png";
 import passwordIcon from "../assets/icons/password.svg";
 import emailIcon from "../assets/icons/email.svg";

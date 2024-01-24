@@ -1,12 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
-import CategoryView from "../components/home/content/CategoryView";
-import nearestIcon from "../assets/icons/NearestIcon.svg";
-import pickUpIcon from "../assets/icons/PickUpIcon.svg";
-import dineInIcon from "../assets/icons/dineIn.svg";
-import highClassIcon from "../assets/icons/highClass.svg";
-import fastDeliveryIcon from "../assets/icons/fastDelivery.svg";
-import popularIcon from "../assets/icons/popular.svg";
 import foodImg1 from "../assets/images/food-1.svg";
 import foodImg2 from "../assets/images/food-2.svg";
 import foodImg3 from "../assets/images/food-3.svg";
@@ -17,7 +9,6 @@ import FoodsView from "../components/home/content/FoodsView";
 import deliveryIcon from "../assets/icons/Delivery.svg";
 import foodIcon from "../assets/icons/Silverware.svg";
 import starIcon from "../assets/icons/Star.svg";
-import RestaurantView from "../components/home/content/RestaurantView";
 import restaurantImg1 from "../assets/images/Burger King.png";
 import restaurantImg2 from "../assets/images/Carrows Restaurant.png";
 import restaurantImg3 from "../assets/images/KFC.png";
@@ -26,46 +17,12 @@ import restaurantImg5 from "../assets/images/McDonald’s.png";
 import restaurantImg6 from "../assets/images/Pizza Hut.png";
 import moneyIcon from "../assets/icons/Money.svg";
 import locationIcon from "../assets/icons/Location.svg";
-import TitleHeader from "../components/home/content/TitleHeader";
-import HomeContent from "../components/home/content/HomeContent";
-
-interface Category {
-  title: string;
-  options: string;
-  icon: string;
-}
-const categories: Category[] = [
-  {
-    title: "Popular",
-    options: "286+ options",
-    icon: popularIcon,
-  },
-  {
-    title: "Fast delivery",
-    options: "1,843+ options",
-    icon: fastDeliveryIcon,
-  },
-  {
-    title: "High class",
-    options: "25+ options",
-    icon: highClassIcon,
-  },
-  {
-    title: "Dine in",
-    options: "182+ options",
-    icon: dineInIcon,
-  },
-  {
-    title: "Pick up",
-    options: "3,548+ options",
-    icon: pickUpIcon,
-  },
-  {
-    title: "Nearest",
-    options: "44+ options",
-    icon: nearestIcon,
-  },
-];
+import TabsView from "../components/home/content/TabsView";
+import TabsButton from "../components/home/button/DefaultButton";
+import { useState } from "react";
+import RestaurantView from "../components/home/content/RestaurantView";
+import restaurantIcon from "../assets/icons/Restaurant.svg";
+import DefaultButton from "../components/home/button/DefaultButton";
 
 interface Foods {
   name: string;
@@ -273,12 +230,20 @@ const restaurants: Restaurants[] = [
   },
 ];
 
-interface HomePageProps {
-  onRestaurantCardClick: () => void;
-}
+function FavouritesPage() {
+  const [showDishes, setShowDishes] = useState(true);
+  const [selectedTab, setSelectedTab] = useState("Dishes");
 
-function HomePage() {
-  const handleRestaurantCardClick = () => {};
+  const handleDishesClick = () => {
+    setShowDishes(true);
+    setSelectedTab("Dishes");
+  };
+
+  const handleRestaurantClick = () => {
+    setShowDishes(false);
+    setSelectedTab("Restaurants");
+  };
+
   const onFinish = async () => {
     // try {
     //   const response = await fetch("/login", {
@@ -298,28 +263,40 @@ function HomePage() {
     //   console.error("Error during login:", error.message);
     // }
   };
-
   return (
-    <>
-      <div style={{ backgroundColor: "#ffffff" }}>
-        <TitleHeader title={"Explore categories"}></TitleHeader>
-        <CategoryView
-          categories={categories}
-          cols={6}
-          gutter={32}
-        ></CategoryView>
-        <TitleHeader title={"Featured restaurants"}></TitleHeader>
+    <div style={{ backgroundColor: "#ffffff" }}>
+      <TabsView
+        items={
+          <>
+            <DefaultButton
+              textButton="Restaurants (8)"
+              prefixIcon={restaurantIcon}
+              onClick={handleRestaurantClick}
+              isSelected={selectedTab === "Restaurants"}
+              buttonType={"primary"}
+            ></DefaultButton>
+            <DefaultButton
+              textButton="Dishes (23)"
+              prefixIcon={foodIcon}
+              onClick={handleDishesClick}
+              isSelected={selectedTab === "Dishes"}
+              buttonType={"primary"}
+            ></DefaultButton>
+          </>
+        }
+      ></TabsView>
+      {showDishes ? (
+        <FoodsView foods={foods} cols={3} gutter={32}></FoodsView>
+      ) : (
         <RestaurantView
           restaurants={restaurants}
           cols={3}
           gutter={24}
-          onClick={handleRestaurantCardClick}
+          onClick={handleRestaurantClick}
         ></RestaurantView>
-        <TitleHeader title={"Asian food"}></TitleHeader>
-        <FoodsView foods={foods} cols={3} gutter={32}></FoodsView>
-      </div>
-    </>
+      )}
+    </div>
   );
 }
 
-export default HomePage;
+export default FavouritesPage;

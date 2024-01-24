@@ -23,13 +23,16 @@ interface ListProps {
   foods?: Foods[];
   cols: number;
   gutter: number;
-  title: string;
 }
 
-function FoodsView({ foods, cols, gutter, title }: ListProps) {
+const handleShowMoreClick = () => {
+  // navigate("/login");
+  // console.log("Sign In clicked!");
+};
+
+function FoodsView({ foods, cols, gutter }: ListProps) {
   return (
     <>
-      <h1 className={`${styles.header} h2-bold`}>{title}</h1>
       <List
         dataSource={foods}
         className={styles.list}

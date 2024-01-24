@@ -24,19 +24,18 @@ interface ListProps {
   restaurants?: Restaurants[];
   cols: number;
   gutter: number;
-  title: string;
+  onClick: () => void;
 }
 
-function RestaurantView({ restaurants, cols, gutter, title }: ListProps) {
+function RestaurantView({ restaurants, cols, gutter, onClick }: ListProps) {
   return (
     <>
-      <h1 className={`${styles.header} h2-bold`}>{title}</h1>
       <List
         dataSource={restaurants}
         className={styles.list}
         grid={{ gutter: gutter, column: cols }}
         renderItem={(food) => (
-          <List.Item>
+          <List.Item onClick={onClick}>
             <RestaurantCard
               name={food.name}
               img={food.img}

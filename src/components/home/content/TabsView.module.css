@@ -1,0 +1,8 @@
+.flex {
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  padding-bottom: 32px;
+  padding-left: 32px;
+  margin: 0;
+}
