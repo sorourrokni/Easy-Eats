@@ -4,6 +4,7 @@ import styles from "./ItemCounts.module.css";
 interface ItemsProps {
   name: string;
   count: number;
+  
 }
 function ItemCounts({ name, count }: ItemsProps) {
   return (

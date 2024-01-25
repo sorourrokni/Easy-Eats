@@ -1,6 +1,11 @@
 import { Card, Flex, Tag } from "antd";
 import styles from "./FoodCard.module.css";
 import IconCard from "./IconCard";
+import addToCardIC from "../../../assets/icons/add-to-cart-3046.svg";
+import BaseIcon from "../../icon/BaseIcon";
+import Icon from "@ant-design/icons/lib/components/Icon";
+import { ShoppingCartOutlined, ShoppingOutlined } from "@ant-design/icons";
+import { useState } from "react";
 
 const TagTypes = {
   FREE: "Free",
@@ -72,6 +77,14 @@ function FoodCard({
     tagContent = `$ ${cost} Delivery`;
   }
 
+  const [isAddedToCart, setIsAddedToCart] = useState(false);
+  const [isSelected, setSelected] = useState(false);
+
+  const handleClick = () => {
+    setIsAddedToCart(!isAddedToCart);
+    setSelected(!isSelected);
+  };
+
   return (
     <Card
       size="small"
@@ -101,6 +114,17 @@ function FoodCard({
             deliveryTime1={deliveryTime1}
             deliveryTime2={deliveryTime2}
           ></IconCard>
+          {isAddedToCart ? (
+            <ShoppingOutlined
+              style={{ fontSize: "24px", color: "var(--secondary-color-100)" }}
+              onClick={handleClick}
+            />
+          ) : (
+            <ShoppingCartOutlined
+              style={{ fontSize: "24px", color: "var(--primary-color-100)" }}
+              onClick={handleClick}
+            />
+          )}
         </Flex>
       </Flex>
     </Card>

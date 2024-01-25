@@ -68,7 +68,7 @@ const orders: UpComingOrders[] = [
   {
     name: "Burger King",
     id: "#1DF90E",
-    time: 35,
+    time: 0.5,
     percent1: 100,
     percent2: 100,
     percent3: 60,
@@ -126,49 +126,8 @@ const preOrders: PreviousOrders[] = [
   },
 ];
 
-interface Restaurants {
-  name: string;
-  img: string;
-  rate: number;
-  rateCount: number;
-  starIcon: string;
-  foodType: string;
-  foodIcon: string;
-  costLevel: number;
-  costIcon: string;
-  tag: string;
-  buyOffer?: number;
-  getOffer?: number;
-  cost?: number;
-  distance: number;
-  locationIcon: string;
-}
-const restaurants: Restaurants[] = [
-  {
-    name: "Burger King",
-    img: restaurantImg1,
-    rate: 4.8,
-    rateCount: 1873,
-    starIcon: starIcon,
-    foodType: "Skewers",
-    foodIcon: foodIcon,
-    costLevel: 1,
-    costIcon: moneyIcon,
-    tag: "Free",
-    locationIcon: locationIcon,
-    distance: 4.3,
-  },
-];
-
 function OrdersPage() {
   const navigate = useNavigate();
-
-  const handleRestaurantCardClick = () => {
-    navigate("/restaurant");
-  };
-  const handleFoodCardClick = () => {
-    navigate("/food");
-  };
 
   const onFinish = async () => {
     // try {

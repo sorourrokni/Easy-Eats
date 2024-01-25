@@ -36,8 +36,8 @@ function PreOrderView({ orders, cols, gutter }: ListProps) {
               date={order.date}
               time={order.time}
               tag={order.tag}
-              onDetailsClick={order.onDetailsClick}
               items={order.items}
+              onDetailsClick={order.onDetailsClick}
             />
           </List.Item>
         )}

@@ -13,6 +13,8 @@ interface IconCardProps {
   deliveryTime2?: number;
   date?: string;
   time?: string;
+  title?: string;
+  
 }
 
 function IconCard({
@@ -26,6 +28,7 @@ function IconCard({
   deliveryTime2,
   date,
   time,
+  title,
 }: IconCardProps) {
   let content;
 
@@ -43,6 +46,8 @@ function IconCard({
     content = date;
   } else if (time) {
     content = time;
+  } else if (title) {
+    content = title;
   }
 
   return (

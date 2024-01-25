@@ -17,6 +17,7 @@ interface Foods {
   buyOffer?: number;
   getOffer?: number;
   cost?: number;
+  selected?: boolean;
 }
 
 interface ListProps {

@@ -33,3 +33,9 @@
   width: fit-content;
   height: fit-content;
 }
+
+.icon {
+  width: 16px;
+  height: 16px;
+  color: var(--secondary-color-100);
+}

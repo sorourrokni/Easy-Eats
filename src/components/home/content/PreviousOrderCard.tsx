@@ -1,10 +1,11 @@
-import { Card, Flex, List, Tag } from "antd";
+import { Card, Drawer, Flex, List, Tag } from "antd";
 import styles from "./PreviousOrderCard.module.css";
 import DefaultButton from "../button/DefaultButton";
 import timeIcon from "../../../assets/icons/Clock.svg";
 import IconCard from "./IconCard";
 import dateIcon from "../../../assets/icons/Calendar.svg";
 import ItemCounts from "./ItemCounts";
+import { useState } from "react";
 
 interface CardProps {
   name: string;
@@ -24,14 +25,16 @@ interface Items {
   name: string;
   count: number;
 }
-function PreviousOrderCard({
-  name,
-  date,
-  time,
-  items,
-  tag,
-  onDetailsClick,
-}: CardProps) {
+function PreviousOrderCard({ name, date, time, items, tag }: CardProps) {
+  const [drawerVisible, setDrawerVisible] = useState(false);
+
+  const showDrawer = () => {
+    setDrawerVisible(true);
+  };
+
+  const onCloseDrawer = () => {
+    setDrawerVisible(false);
+  };
   let tagColor;
   let tagBgColor;
   let tagContent;
@@ -88,7 +91,7 @@ function PreviousOrderCard({
         <DefaultButton
           textButton="Details"
           buttonType="secondary"
-          onClick={onDetailsClick}
+          onClick={showDrawer}
           isSelected={true}
           className={styles.button}
         ></DefaultButton>
@@ -99,6 +102,20 @@ function PreviousOrderCard({
           className={styles.button}
         ></DefaultButton>
       </Flex>
+      <Drawer
+        className=""
+        title="Order Details"
+        placement="right"
+        closable={true}
+        onClose={onCloseDrawer}
+        open={drawerVisible}
+        width={400}
+      >
+        <h2>{name}</h2>
+        <p>Date: {date}</p>
+        <p>Time: {time}</p>
+        {/* ... (other order details) */}
+      </Drawer>
     </Card>
   );
 }
