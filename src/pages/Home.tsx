@@ -27,7 +27,7 @@ import restaurantImg6 from "../assets/images/Pizza Hut.png";
 import moneyIcon from "../assets/icons/Money.svg";
 import locationIcon from "../assets/icons/Location.svg";
 import TitleHeader from "../components/home/content/TitleHeader";
-import HomeContent from "../components/home/content/HomeContent";
+import DashboardLayout from "../components/DashboardLayout";
 
 interface Category {
   title: string;
@@ -278,7 +278,12 @@ interface HomePageProps {
 }
 
 function HomePage() {
-  const handleRestaurantCardClick = () => {};
+  const navigate = useNavigate();
+
+  function handleRestaurantCardClick() {
+    navigate("/restaurant");
+  }
+
   const onFinish = async () => {
     // try {
     //   const response = await fetch("/login", {
@@ -300,25 +305,28 @@ function HomePage() {
   };
 
   return (
-    <>
-      <div style={{ backgroundColor: "#ffffff" }}>
-        <TitleHeader title={"Explore categories"}></TitleHeader>
-        <CategoryView
-          categories={categories}
-          cols={6}
-          gutter={32}
-        ></CategoryView>
-        <TitleHeader title={"Featured restaurants"}></TitleHeader>
-        <RestaurantView
-          restaurants={restaurants}
-          cols={3}
-          gutter={24}
-          onClick={handleRestaurantCardClick}
-        ></RestaurantView>
-        <TitleHeader title={"Asian food"}></TitleHeader>
-        <FoodsView foods={foods} cols={3} gutter={32}></FoodsView>
-      </div>
-    </>
+    <DashboardLayout
+      children={
+        <div style={{ backgroundColor: "#ffffff" }}>
+          <TitleHeader title={"Explore categories"}></TitleHeader>
+          <CategoryView
+            categories={categories}
+            cols={6}
+            gutter={32}
+          ></CategoryView>
+          <TitleHeader title={"Featured restaurants"}></TitleHeader>
+          <RestaurantView
+            restaurants={restaurants}
+            cols={3}
+            gutter={24}
+            onClick={handleRestaurantCardClick}
+          ></RestaurantView>
+          <TitleHeader title={"Asian food"}></TitleHeader>
+          <FoodsView foods={foods} cols={3} gutter={32}></FoodsView>
+        </div>
+      }
+      menuItem={"Home"}
+    ></DashboardLayout>
   );
 }
 

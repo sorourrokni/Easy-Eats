@@ -23,6 +23,8 @@ import { useState } from "react";
 import RestaurantView from "../components/home/content/RestaurantView";
 import restaurantIcon from "../assets/icons/Restaurant.svg";
 import DefaultButton from "../components/home/button/DefaultButton";
+import DashboardContent from "../components/home/content/DashboardContent";
+import DashboardLayout from "../components/DashboardLayout";
 
 interface Foods {
   name: string;
@@ -264,38 +266,43 @@ function FavouritesPage() {
     // }
   };
   return (
-    <div style={{ backgroundColor: "#ffffff" }}>
-      <TabsView
-        items={
-          <>
-            <DefaultButton
-              textButton="Restaurants (8)"
-              prefixIcon={restaurantIcon}
+    <DashboardLayout
+      children={
+        <div style={{ backgroundColor: "#ffffff" }}>
+          <TabsView
+            items={
+              <>
+                <DefaultButton
+                  textButton="Restaurants (8)"
+                  prefixIcon={restaurantIcon}
+                  onClick={handleRestaurantClick}
+                  isSelected={selectedTab === "Restaurants"}
+                  buttonType={"primary"}
+                ></DefaultButton>
+                <DefaultButton
+                  textButton="Dishes (23)"
+                  prefixIcon={foodIcon}
+                  onClick={handleDishesClick}
+                  isSelected={selectedTab === "Dishes"}
+                  buttonType={"primary"}
+                ></DefaultButton>
+              </>
+            }
+          ></TabsView>
+          {showDishes ? (
+            <FoodsView foods={foods} cols={3} gutter={32}></FoodsView>
+          ) : (
+            <RestaurantView
+              restaurants={restaurants}
+              cols={3}
+              gutter={24}
               onClick={handleRestaurantClick}
-              isSelected={selectedTab === "Restaurants"}
-              buttonType={"primary"}
-            ></DefaultButton>
-            <DefaultButton
-              textButton="Dishes (23)"
-              prefixIcon={foodIcon}
-              onClick={handleDishesClick}
-              isSelected={selectedTab === "Dishes"}
-              buttonType={"primary"}
-            ></DefaultButton>
-          </>
-        }
-      ></TabsView>
-      {showDishes ? (
-        <FoodsView foods={foods} cols={3} gutter={32}></FoodsView>
-      ) : (
-        <RestaurantView
-          restaurants={restaurants}
-          cols={3}
-          gutter={24}
-          onClick={handleRestaurantClick}
-        ></RestaurantView>
-      )}
-    </div>
+            ></RestaurantView>
+          )}
+        </div>
+      }
+      menuItem="Favourites"
+    ></DashboardLayout>
   );
 }
 

@@ -46,3 +46,10 @@
 .time {
   margin: 0;
 }
+
+.button {
+  width: 144px;
+  height: 40px;
+  margin: 0;
+  text-align: center;
+}

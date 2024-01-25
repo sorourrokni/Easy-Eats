@@ -21,7 +21,7 @@ function CustomMenu({ items, selectedKeys, onSelect }: MenuProps) {
       mode="inline"
       defaultSelectedKeys={["1"]}
       selectedKeys={selectedKeys}
-      onSelect={onSelect}
+      onClick={onSelect}
       items={items}
     ></Menu>
   );

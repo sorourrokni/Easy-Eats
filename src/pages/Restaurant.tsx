@@ -1,8 +1,9 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Banner from "../components/restaurant/Banner";
 import restaurantImg from "../assets/images/Burger King.png";
 import bannerImg from "../assets/images/banner.png";
 import heartIcon from "../assets/icons/Heart.svg";
+import DashboardLayout from "../components/DashboardLayout";
 
 interface RestaurantData {
   email: string;
@@ -11,6 +12,10 @@ interface RestaurantData {
 }
 
 function RestaurantPage() {
+  const location = useLocation();
+  const restaurantData = location.state && location.state.restaurantData;
+
+  console.log(restaurantData);
   const navigate = useNavigate();
 
   const onFinish = async (values: RestaurantData) => {
@@ -46,9 +51,19 @@ function RestaurantPage() {
     },
   ];
   return (
-    <>
-      <Banner icon={heartIcon} banner={bannerImg} img={restaurantImg}></Banner>
-    </>
+    <DashboardLayout
+      children={
+        <>
+          <Banner
+            icon={heartIcon}
+            banner={bannerImg}
+            img={restaurantImg}
+          ></Banner>
+          <p></p>
+        </>
+      }
+      menuItem={"Home"}
+    ></DashboardLayout>
   );
 }
 

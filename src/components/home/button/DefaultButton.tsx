@@ -10,6 +10,7 @@ interface ButtonProps {
   prefixIcon?: string;
   buttonType: "primary" | "secondary";
   isSelected?: boolean;
+  className?: string;
 }
 
 function DefaultButton({
@@ -18,14 +19,15 @@ function DefaultButton({
   prefixIcon,
   buttonType,
   isSelected = false,
+  className,
 }: ButtonProps) {
   const buttonTypeStyles =
     buttonType === "primary" ? primaryStyles : secondaryStyles;
 
   return (
     <Button
-      className={`${buttonTypeStyles.button} caption1-regular ${
-        isSelected ? `${buttonTypeStyles.selected} h6-bold` : ""
+      className={`${buttonTypeStyles.button} ${className} h5-bold ${
+        isSelected ? `${buttonTypeStyles.selected} h5-bold` : ""
       }`}
       type="primary"
       onClick={onClick}
@@ -34,6 +36,7 @@ function DefaultButton({
           <BaseIcon
             srcSet={prefixIcon}
             alt="prefix Icon"
+            color="var(--primary-color-100)"
             className={`${baseIconStyles.icon} ${buttonTypeStyles.icon} ${
               isSelected ? buttonTypeStyles.selected : ""
             }`}

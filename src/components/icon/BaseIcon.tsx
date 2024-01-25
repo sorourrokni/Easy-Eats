@@ -15,6 +15,7 @@ function BaseIcon({
   className = "",
   onClick,
   isSelected = false,
+  color,
 }: BaseIconProps) {
   const handleClick = () => {
     if (onClick) {
@@ -31,7 +32,7 @@ function BaseIcon({
     >
       <img
         className={`${styles.icon} ${isSelected ? styles.selected : ""}`}
-        // style={{ color: color }}
+        style={{ color: color }}
         loading="lazy"
         srcSet={srcSet}
         alt={alt}

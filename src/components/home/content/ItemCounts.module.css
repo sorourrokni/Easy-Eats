@@ -1,0 +1,25 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+
+.name {
+  color: #182135;
+  margin: 0;
+}
+
+.count {
+  background-color: #ffffff;
+  color: var(--default-icon-color);
+  border-radius: 4px;
+  height: 24px;
+  width: 24px;
+  margin-right: 16px;
+  margin-bottom: 0;
+  padding: 0;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}

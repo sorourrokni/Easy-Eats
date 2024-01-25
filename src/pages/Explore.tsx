@@ -19,6 +19,7 @@ import restaurantImg6 from "../assets/images/Pizza Hut.png";
 import moneyIcon from "../assets/icons/Money.svg";
 import locationIcon from "../assets/icons/Location.svg";
 import TitleHeader from "../components/home/content/TitleHeader";
+import DashboardLayout from "../components/DashboardLayout";
 
 interface Foods {
   name: string;
@@ -256,19 +257,23 @@ function ExplorePage() {
     // }
   };
   return (
-    <div style={{ backgroundColor: "#ffffff" }}>
-      <TitleHeader title={"Restaurants nearby"}></TitleHeader>
-      <RestaurantView
-        restaurants={restaurants}
-        cols={3}
-        gutter={24}
-        onClick={handleRestaurantCardClick}
-      ></RestaurantView>
-      <TitleHeader title={"Popular orders"}></TitleHeader>
+    <DashboardLayout
+      children={
+        <div style={{ backgroundColor: "#ffffff" }}>
+          <TitleHeader title={"Restaurants nearby"}></TitleHeader>
+          <RestaurantView
+            restaurants={restaurants}
+            cols={3}
+            gutter={24}
+            onClick={handleRestaurantCardClick}
+          ></RestaurantView>
+          <TitleHeader title={"Popular orders"}></TitleHeader>
 
-      <FoodsView foods={foods} cols={3} gutter={32}></FoodsView>
-    </div>
+          <FoodsView foods={foods} cols={3} gutter={32}></FoodsView>
+        </div>
+      }
+      menuItem={"Explore"}
+    ></DashboardLayout>
   );
 }
-
 export default ExplorePage;

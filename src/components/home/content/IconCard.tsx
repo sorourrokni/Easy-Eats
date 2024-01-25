@@ -11,6 +11,8 @@ interface IconCardProps {
   distance?: number;
   deliveryTime1?: number;
   deliveryTime2?: number;
+  date?: string;
+  time?: string;
 }
 
 function IconCard({
@@ -22,6 +24,8 @@ function IconCard({
   distance,
   deliveryTime1,
   deliveryTime2,
+  date,
+  time,
 }: IconCardProps) {
   let content;
 
@@ -35,6 +39,10 @@ function IconCard({
     content = `${distance} km`;
   } else if (deliveryTime1 && deliveryTime2) {
     content = `${deliveryTime1} - ${deliveryTime2} min`;
+  } else if (date) {
+    content = date;
+  } else if (time) {
+    content = time;
   }
 
   return (
