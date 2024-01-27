@@ -7,7 +7,7 @@ import bookmarkIcon from "../assets/icons/Bookmark.svg";
 import messageIcon from "../assets/icons/message.svg";
 import userIcon from "../assets/icons/userImg.svg";
 import menuIcon from "../assets/icons/menuIcon.svg";
-import { Layout, theme } from "antd";
+import { Layout } from "antd";
 import SideLayout from "./home/navigationSide/SideLayout";
 import User from "./home/navigationSide/User";
 import CustomMenu from "./home/navigationSide/CustomMenu";

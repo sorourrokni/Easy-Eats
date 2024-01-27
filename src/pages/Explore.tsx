@@ -142,7 +142,7 @@ interface Restaurants {
 }
 const restaurants: Restaurants[] = [
   {
-    name: "Burger King",
+    name: "Domino’s Pizza",
     img: restaurantImg1,
     rate: 4.8,
     rateCount: 1873,

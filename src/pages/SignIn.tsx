@@ -31,7 +31,7 @@ function SignInPage() {
         }
       );
       if (!response.ok) {
-        throw new Error("Registration failed");
+        throw new Error("login failed");
       }
       const result = await response.json();
       console.log("Registration successful:", result);

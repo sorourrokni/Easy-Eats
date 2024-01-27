@@ -114,7 +114,16 @@ function PreviousOrderCard({ name, date, time, items, tag }: CardProps) {
         <h2>{name}</h2>
         <p>Date: {date}</p>
         <p>Time: {time}</p>
-        {/* ... (other order details) */}
+        <List
+          dataSource={items}
+          className={styles.list}
+          grid={{ column: 1 }}
+          renderItem={(item) => (
+            <List.Item>
+              <ItemCounts name={item.name} count={item.count} />
+            </List.Item>
+          )}
+        />
       </Drawer>
     </Card>
   );

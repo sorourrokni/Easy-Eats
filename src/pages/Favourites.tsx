@@ -142,16 +142,94 @@ interface Restaurants {
   cost?: number;
   distance: number;
 }
+const restaurants: Restaurants[] = [
+  {
+    name: "Burger King",
+    img: restaurantImg1,
+    rate: 4.8,
+    rateCount: 1873,
+    foodType: "Skewers",
+    costLevel: 1,
+    tag: "Free",
+    distance: 4.3,
+  },
+  {
+    name: "Burger King",
+    img: restaurantImg2,
+    rate: 4.8,
+    rateCount: 1873,
+    foodType: "Skewers",
+    costLevel: 1,
+    tag: "Free",
+    distance: 4.3,
+  },
+  {
+    name: "Burger King",
+    img: restaurantImg3,
+    rate: 4.8,
+    rateCount: 1873,
+    foodType: "Skewers",
+    costLevel: 1,
+    tag: "Free",
+    distance: 4.3,
+  },
+  {
+    name: "Burger King",
+    img: restaurantImg4,
+    rate: 4.8,
+    rateCount: 1873,
+    foodType: "Skewers",
+    costLevel: 1,
+    tag: "Free",
+    distance: 4.3,
+  },
+  {
+    name: "Burger King",
+    img: restaurantImg5,
+    rate: 4.8,
+    rateCount: 1873,
+    foodType: "Skewers",
+    costLevel: 1,
+    tag: "Free",
+    distance: 4.3,
+  },
+  {
+    name: "Burger King",
+    img: restaurantImg6,
+    rate: 4.8,
+    rateCount: 1873,
+    foodType: "Skewers",
+    costLevel: 1,
+    tag: "Free",
+    distance: 4.3,
+  },
+];
+
+interface HomePageProps {
+  onRestaurantCardClick: () => void;
+}
 
 function FavouritesPage() {
   async function fetchFavourites() {
     try {
       const response = await fetch(
-        "https://c71c3af2-3694-40d2-84a4-00bed8c6de01.mock.pstmn.io/api/favourites"
+        // "https://c71c3af2-3694-40d2-84a4-00bed8c6de01.mock.pstmn.io/api/favourites"
+        "http://localhost:8000/api/restaurants/"
       );
       console.log(response);
       const data = await response.json();
-      setRestaurantsList(data.restaurants);
+      setRestaurantsList([
+        {
+          name: data.name,
+          img: restaurantImg6,
+          rate: data.rate,
+          rateCount: 1873,
+          foodType: data.restaurant_type,
+          costLevel: 1,
+          tag: "Free",
+          distance: data.distance_to_origin,
+        },
+      ]);
     } catch (error: any) {
       console.error(error);
     }
@@ -160,7 +238,7 @@ function FavouritesPage() {
   useEffect(() => {
     fetchFavourites().then(() => {});
   }, []);
-
+  const navigate = useNavigate();
   const [restaurantsList, setRestaurantsList] = useState<Restaurants[]>([]);
 
   const [showDishes, setShowDishes] = useState(true);
@@ -175,6 +253,10 @@ function FavouritesPage() {
     setShowDishes(false);
     setSelectedTab("Restaurants");
   };
+
+  function handleRestaurantCardClick() {
+    navigate("/restaurant");
+  }
 
   return (
     <DashboardLayout
@@ -204,10 +286,10 @@ function FavouritesPage() {
             <FoodsView foods={foods} cols={3} gutter={32}></FoodsView>
           ) : (
             <RestaurantView
-              restaurants={restaurantsList}
+              restaurants={restaurants}
               cols={3}
               gutter={24}
-              onClick={handleRestaurantClick}
+              onClick={handleRestaurantCardClick}
             ></RestaurantView>
           )}
         </div>

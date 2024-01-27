@@ -273,10 +273,6 @@ const restaurants: Restaurants[] = [
   },
 ];
 
-interface HomePageProps {
-  onRestaurantCardClick: () => void;
-}
-
 function HomePage() {
   const navigate = useNavigate();
 
