@@ -24,13 +24,6 @@ import shopIcon from "../assets/icons/filterIcon.svg";
 import filterIcon from "../assets/icons/shopIcon.svg";
 import InputSearch from "./input/search/InputSearch";
 import { useNavigate } from "react-router-dom";
-import DashboardContent from "./home/content/DashboardContent";
-import { Link } from "react-router-dom";
-import RestaurantPage from "../pages/Restaurant";
-import HomePage from "../pages/Home";
-import ExplorePage from "../pages/Explore";
-import FavouritesPage from "../pages/Favourites";
-import OrdersPage from "../pages/Orders";
 
 const { Content, Footer } = Layout;
 
@@ -99,7 +92,7 @@ function DashboardLayout({ children, menuItem }: DashboardProps) {
           navigate("/home");
           break;
         case "Settings":
-          navigate("/home");
+          navigate("/settings");
           break;
 
         default:

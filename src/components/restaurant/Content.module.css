@@ -1,0 +1,35 @@
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 32px;
+}
+
+.row1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemsRow {
+  padding-top: 24px;
+  padding-bottom: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.description {
+  width: 577px;
+  margin: 0;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  padding-bottom: 32px;
+}

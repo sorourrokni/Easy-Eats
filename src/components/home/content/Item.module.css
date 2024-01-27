@@ -7,9 +7,10 @@
 }
 
 .content {
-  color: #626264;
+  color: #182135;
   text-align: center;
-  margin: 4px;
+  margin: 0px;
+  padding-left: 16px;
 }
 .row1 {
   display: flex;

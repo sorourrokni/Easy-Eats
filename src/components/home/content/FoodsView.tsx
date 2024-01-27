@@ -7,12 +7,9 @@ interface Foods {
   img: string;
   rate: number;
   rateCount: number;
-  starIcon: string;
   foodType: string;
-  foodIcon: string;
   deliveryTime1: number;
   deliveryTime2: number;
-  deliveryIcon: string;
   tag: string;
   buyOffer?: number;
   getOffer?: number;
@@ -45,12 +42,9 @@ function FoodsView({ foods, cols, gutter }: ListProps) {
               img={food.img}
               rate={food.rate}
               rateCount={food.rateCount}
-              starIcon={food.starIcon}
               foodType={food.foodType}
-              foodIcon={food.foodIcon}
               deliveryTime1={food.deliveryTime1}
               deliveryTime2={food.deliveryTime2}
-              deliveryIcon={food.deliveryIcon}
               tag={food.tag}
               getOffer={food.getOffer}
               buyOffer={food.buyOffer}

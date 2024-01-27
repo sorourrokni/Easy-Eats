@@ -1,6 +1,10 @@
 import { Card, Flex, Tag } from "antd";
 import styles from "./RestaurantCard.module.css";
 import IconCard from "./IconCard";
+import locationIcon from "../../../assets/icons/Location-grey.svg";
+import starIcon from "../../../assets/icons/Star.svg";
+import foodIcon from "../../../assets/icons/Silverware.svg";
+import costIcon from "../../../assets/icons/Money.svg";
 
 const TagTypes = {
   FREE: "Free",
@@ -18,33 +22,26 @@ interface CardProps {
   img: string;
   rate: number;
   rateCount: number;
-  starIcon: string;
   foodType: string;
-  foodIcon: string;
   costLevel: number;
-  costIcon: string;
   tag: string;
   buyOffer?: number;
   getOffer?: number;
   cost?: number;
   distance: number;
-  locationIcon: string;
 }
 function FoodCard({
   name,
-  starIcon,
   rate,
   rateCount,
   foodType,
-  foodIcon,
   costLevel,
-  costIcon,
   img,
   tag,
   cost,
   buyOffer,
   getOffer,
-  locationIcon,
+
   distance,
 }: CardProps) {
   let tagContent;

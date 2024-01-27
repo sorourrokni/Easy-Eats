@@ -6,6 +6,9 @@ import BaseIcon from "../../icon/BaseIcon";
 import Icon from "@ant-design/icons/lib/components/Icon";
 import { ShoppingCartOutlined, ShoppingOutlined } from "@ant-design/icons";
 import { useState } from "react";
+import foodIcon from "../../../assets/icons/Silverware.svg";
+import starIcon from "../../../assets/icons/Star.svg";
+import deliveryIcon from "../../../assets/icons/Delivery.svg";
 
 const TagTypes = {
   FREE: "Free",
@@ -18,12 +21,9 @@ interface CardProps {
   img: string;
   rate: number;
   rateCount: number;
-  starIcon: string;
   foodType: string;
-  foodIcon: string;
   deliveryTime1: number;
   deliveryTime2: number;
-  deliveryIcon: string;
   tag: string;
   buyOffer?: number;
   getOffer?: number;
@@ -31,14 +31,11 @@ interface CardProps {
 }
 function FoodCard({
   name,
-  starIcon,
   rate,
   rateCount,
   foodType,
-  foodIcon,
   deliveryTime1,
   deliveryTime2,
-  deliveryIcon,
   img,
   tag,
   cost,

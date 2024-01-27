@@ -7,34 +7,38 @@ import passwordIcon from "../assets/icons/password.svg";
 import emailIcon from "../assets/icons/email.svg";
 import ForgotPasswordLink from "../components/signin/ForgotPasswordLink";
 import SecondaryButton from "../components/form/SecondaryButton";
+import nameIcon from "../assets/icons/name.svg";
 
 interface SignInData {
-  email: string;
+  username: string;
   password: string;
-  remember: boolean;
 }
 
 function SignInPage() {
   const navigate = useNavigate();
 
   const onFinish = async (values: SignInData) => {
-    // try {
-    //   const response = await fetch("/login", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(values),
-    //   });
-    //   if (!response.ok) {
-    //     throw new Error("Login failed");
-    //   }
-    //   const result = await response.json();
-    //   console.log("Login successful:", result);
-    //   navigate("/");
-    // } catch (error: any) {
-    //   console.error("Error during login:", error.message);
-    // }
+    try {
+      const response = await fetch(
+        "http://localhost:8000/api/rest-auth/login/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "*/*",
+            // Accept: "application/json",
+          },
+          body: JSON.stringify(values),
+        }
+      );
+      if (!response.ok) {
+        throw new Error("Registration failed");
+      }
+      const result = await response.json();
+      console.log("Registration successful:", result);
+      navigate("/home");
+    } catch (error: any) {
+      console.error("Error during registration:", error.message);
+    }
   };
 
   const handleForgotPasswordClick = () => {
@@ -55,11 +59,11 @@ function SignInPage() {
       >
         <>
           <FormInput
-            label="Email address"
-            icon={emailIcon}
-            name="email"
-            type="email"
-            placeholder="markclarke@gmail.com"
+            label="Username"
+            icon={nameIcon}
+            name="username"
+            type="text"
+            placeholder="Mark_Clarke"
             required
           />
           <FormInput

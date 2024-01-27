@@ -1,0 +1,17 @@
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header {
+  padding-left: 0px;
+}

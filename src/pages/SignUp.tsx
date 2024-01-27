@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import FormInput from "../components/form/FormInput";
 import PrimaryButton from "../components/form/PrimaryButton";
 import AuthForm from "../components/form/AuthForm";
-import WebBreadcrumb from "../components/header/breadcrump/WebBreadCrumb";
 import LinkButton from "../components/form/LinkButton";
 import passwordIcon from "../assets/icons/password.svg";
 import emailIcon from "../assets/icons/email.svg";
@@ -13,37 +12,37 @@ import SideCover from "../components/form/SideCover";
 import SideImage from "../assets/images/SideImage.png";
 
 interface SignUpData {
-  name: string;
+  username: string;
   email: string;
-  password: string;
+  password1: string;
+  password2: string;
 }
 
 function SignUpPage() {
-  const breadcrumbItems = [
-    { name: "Home", path: "/" },
-    { name: "Register", path: "/register" },
-  ];
-
   const navigate = useNavigate();
 
   const onFinish = async (values: SignUpData) => {
-    // try {
-    //   const response = await fetch("http://localhost:5199/register", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(values),
-    //   });
-    //   if (!response.ok) {
-    //     throw new Error("Registration failed");
-    //   }
-    //   const result = await response.json();
-    //   console.log("Registration successful:", result);
-    //   navigate("/");
-    // } catch (error: any) {
-    //   console.error("Error during registration:", error.message);
-    // }
+    try {
+      const response = await fetch(
+        "http://localhost:8000/api/rest-auth/registration/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "*/*",
+            // Accept: "application/json",
+          },
+          body: JSON.stringify(values),
+        }
+      );
+      if (!response.ok) {
+        throw new Error("Registration failed");
+      }
+      const result = await response.json();
+      console.log("Registration successful:", result);
+      navigate("/home");
+    } catch (error: any) {
+      console.error("Error during registration:", error.message);
+    }
   };
 
   const handleSignInClick = () => {
@@ -53,8 +52,6 @@ function SignUpPage() {
 
   return (
     <>
-      {/* <WebBreadcrumb items={breadcrumbItems} /> */}
-
       <AuthForm
         title="Create an account"
         description="Plese create an account to continue using our service"
@@ -63,11 +60,11 @@ function SignUpPage() {
       >
         <>
           <FormInput
-            label="Full Name"
+            label="Username"
             icon={nameIcon}
-            name="Name"
+            name="username"
             type="text"
-            placeholder="Mark Clarke"
+            placeholder="Mark_Clarke"
             required
           />
           <FormInput
@@ -81,7 +78,15 @@ function SignUpPage() {
           <FormInput
             label="Password"
             icon={passwordIcon}
-            name="password"
+            name="password1"
+            type="password"
+            placeholder="******"
+            required
+          />
+          <FormInput
+            label="Confirm Password"
+            icon={passwordIcon}
+            name="password2"
             type="password"
             placeholder="******"
             required

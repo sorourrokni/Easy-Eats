@@ -7,17 +7,13 @@ interface Restaurants {
   img: string;
   rate: number;
   rateCount: number;
-  starIcon: string;
   foodType: string;
-  foodIcon: string;
   costLevel: number;
-  costIcon: string;
   tag: string;
   buyOffer?: number;
   getOffer?: number;
   cost?: number;
   distance: number;
-  locationIcon: string;
 }
 
 interface ListProps {
@@ -41,17 +37,13 @@ function RestaurantView({ restaurants, cols, gutter, onClick }: ListProps) {
               img={food.img}
               rate={food.rate}
               rateCount={food.rateCount}
-              starIcon={food.starIcon}
               foodType={food.foodType}
-              foodIcon={food.foodIcon}
               tag={food.tag}
               getOffer={food.getOffer}
               buyOffer={food.buyOffer}
               cost={food.cost}
               costLevel={food.costLevel}
-              costIcon={food.costIcon}
               distance={food.distance}
-              locationIcon={food.locationIcon}
             />
           </List.Item>
         )}

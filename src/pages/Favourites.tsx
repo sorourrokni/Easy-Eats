@@ -19,7 +19,7 @@ import moneyIcon from "../assets/icons/Money.svg";
 import locationIcon from "../assets/icons/Location.svg";
 import TabsView from "../components/home/content/TabsView";
 import TabsButton from "../components/home/button/DefaultButton";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RestaurantView from "../components/home/content/RestaurantView";
 import restaurantIcon from "../assets/icons/Restaurant.svg";
 import DefaultButton from "../components/home/button/DefaultButton";
@@ -42,6 +42,7 @@ interface Foods {
   getOffer?: number;
   cost?: number;
 }
+
 const foods: Foods[] = [
   {
     name: "Gigantic Rodeo Burger",
@@ -133,106 +134,35 @@ interface Restaurants {
   img: string;
   rate: number;
   rateCount: number;
-  starIcon: string;
   foodType: string;
-  foodIcon: string;
   costLevel: number;
-  costIcon: string;
   tag: string;
   buyOffer?: number;
   getOffer?: number;
   cost?: number;
   distance: number;
-  locationIcon: string;
 }
-const restaurants: Restaurants[] = [
-  {
-    name: "Burger King",
-    img: restaurantImg1,
-    rate: 4.8,
-    rateCount: 1873,
-    starIcon: starIcon,
-    foodType: "Skewers",
-    foodIcon: foodIcon,
-    costLevel: 1,
-    costIcon: moneyIcon,
-    tag: "Free",
-    locationIcon: locationIcon,
-    distance: 4.3,
-  },
-  {
-    name: "Burger King",
-    img: restaurantImg2,
-    rate: 4.8,
-    rateCount: 1873,
-    starIcon: starIcon,
-    foodType: "Skewers",
-    foodIcon: foodIcon,
-    costLevel: 1,
-    costIcon: moneyIcon,
-    tag: "Free",
-    locationIcon: locationIcon,
-    distance: 4.3,
-  },
-  {
-    name: "Burger King",
-    img: restaurantImg3,
-    rate: 4.8,
-    rateCount: 1873,
-    starIcon: starIcon,
-    foodType: "Skewers",
-    foodIcon: foodIcon,
-    costLevel: 1,
-    costIcon: moneyIcon,
-    tag: "Free",
-    locationIcon: locationIcon,
-    distance: 4.3,
-  },
-  {
-    name: "Burger King",
-    img: restaurantImg4,
-    rate: 4.8,
-    rateCount: 1873,
-    starIcon: starIcon,
-    foodType: "Skewers",
-    foodIcon: foodIcon,
-    costLevel: 1,
-    costIcon: moneyIcon,
-    tag: "Free",
-    locationIcon: locationIcon,
-    distance: 4.3,
-  },
-  {
-    name: "Burger King",
-    img: restaurantImg5,
-    rate: 4.8,
-    rateCount: 1873,
-    starIcon: starIcon,
-    foodType: "Skewers",
-    foodIcon: foodIcon,
-    costLevel: 1,
-    costIcon: moneyIcon,
-    tag: "Free",
-    locationIcon: locationIcon,
-    distance: 4.3,
-  },
-  {
-    name: "Burger King",
-    img: restaurantImg6,
-    rate: 4.8,
-    rateCount: 1873,
-    starIcon: starIcon,
-    foodType: "Skewers",
-    foodIcon: foodIcon,
-    costLevel: 1,
-    costIcon: moneyIcon,
-    tag: "Free",
-    locationIcon: locationIcon,
-    distance: 4.3,
-  },
-];
 
 function FavouritesPage() {
+  async function fetchFavourites() {
+    try {
+      const response = await fetch(
+        "https://c71c3af2-3694-40d2-84a4-00bed8c6de01.mock.pstmn.io/api/favourites"
+      );
+      console.log(response);
+      const data = await response.json();
+      setRestaurantsList(data.restaurants);
+    } catch (error: any) {
+      console.error(error);
+    }
+  }
+
+  useEffect(() => {
+    fetchFavourites().then(() => {});
+  }, []);
+
+  const [restaurantsList, setRestaurantsList] = useState<Restaurants[]>([]);
+
   const [showDishes, setShowDishes] = useState(true);
   const [selectedTab, setSelectedTab] = useState("Dishes");
 
@@ -246,25 +176,6 @@ function FavouritesPage() {
     setSelectedTab("Restaurants");
   };
 
-  const onFinish = async () => {
-    // try {
-    //   const response = await fetch("/login", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(values),
-    //   });
-    //   if (!response.ok) {
-    //     throw new Error("Login failed");
-    //   }
-    //   const result = await response.json();
-    //   console.log("Login successful:", result);
-    //   navigate("/");
-    // } catch (error: any) {
-    //   console.error("Error during login:", error.message);
-    // }
-  };
   return (
     <DashboardLayout
       children={
@@ -293,7 +204,7 @@ function FavouritesPage() {
             <FoodsView foods={foods} cols={3} gutter={32}></FoodsView>
           ) : (
             <RestaurantView
-              restaurants={restaurants}
+              restaurants={restaurantsList}
               cols={3}
               gutter={24}
               onClick={handleRestaurantClick}
