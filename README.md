@@ -21,10 +21,9 @@ npm run test
 
 👤 **Sorour Rokni pour**
 
-* Github: [@sorourrokni](https://github.com/sorourrokni)
-* LinkedIn: [@sorour-rokni](https://linkedin.com/in/sorour-rokni)
+- Github: [@sorourrokni](https://github.com/sorourrokni)
+- LinkedIn: [@sorour-rokni](https://www.linkedin.com/in/sorour-rokni-79352a202/)
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
-
